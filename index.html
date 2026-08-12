@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地球の課題までフィールドワーQ部｜社会課題の現場をめぐる探究コミュニティ</title>
+<meta name="description" content="世界の社会課題を、自分の目で見て、自分の問いとして持ち帰る、大人のための探究コミュニティ「地球の課題までフィールドワーQ部」。年に一度、海外の現場へ。第1回はウズベキスタン・カザフスタンが有力候補です。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1b3a6b">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="地球の課題までフィールドワーQ部｜社会課題の現場をめぐる探究コミュニティ">
+<meta property="og:description" content="世界は、検索しただけではわからない。年に一度、世界の社会課題の現場へ。見て、聞いて、問いを持ち帰る海外フィールドワーク・コミュニティ。">
+<meta property="og:image" content="assets/logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  /* base */
+  --c-parchment: #f0dfae;
+  --c-parchment-deep: #e3c377;
+  --c-paper: #faf3e0;
+  --c-ink: #2b2117;
+  --c-ink-soft: #5c4a33;
+  /* brand */
+  --c-navy: #1b3a6b;
+  --c-navy-deep: #122647;
+  --c-gold: #d4a017;
+  --c-gold-bright: #f0c64a;
+  --c-red: #b5311f;
+  --c-red-hover: #93271a;
+  /* misc */
+  --shadow-card: 0 4px 16px rgba(43,33,23,.12);
+  --radius: 12px;
+  --radius-sm: 6px;
+  --c-white: #fff; /* fixed white for text on solid navy/red fills, both themes */
+
+  --font-display: "Zen Antique", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+  --fs-hero: clamp(1.8rem, 4.5vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.2rem);
+  --fs-h3: 1.2rem;
+  --fs-body: 1rem;
+  --fs-small: .85rem;
+
+  --section-pad: clamp(72px, 10vw, 128px);
+  --container-w: 1080px;
+  --column-w: 720px;
+  --motion-fade: opacity .6s ease-out, transform .6s ease-out;
+  --header-h: 72px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-paper: #101c30;
+    --c-parchment: #16294a;
+    --c-parchment-deep: #122647;
+    --c-ink: #f0e6cf;
+    --c-ink-soft: #c2b394;
+    --c-navy: #7fa3d8;
+    --c-navy-deep: #0b1626;
+    --shadow-card: 0 4px 16px rgba(0,0,0,.4);
+  }
+}
+[data-theme="dark"] {
+  --c-paper: #101c30;
+  --c-parchment: #16294a;
+  --c-parchment-deep: #122647;
+  --c-ink: #f0e6cf;
+  --c-ink-soft: #c2b394;
+  --c-navy: #7fa3d8;
+  --c-navy-deep: #0b1626;
+  --shadow-card: 0 4px 16px rgba(0,0,0,.4);
+}
+
+/* ==========================================================================
+   Reset / base
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+  color: var(--c-ink);
+  background: var(--c-paper);
+  transition: background-color .3s ease, color .3s ease;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.4; margin: 0; }
+h2 { font-size: var(--fs-h2); color: var(--c-navy); }
+h3 { font-size: var(--fs-h3); }
+p { margin: 0 0 1em; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+.container { max-width: var(--container-w); margin: 0 auto; padding: 0 24px; }
+.column { max-width: var(--column-w); margin: 0 auto; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+.section { padding: var(--section-pad) 0; }
+.section-lead { color: var(--c-ink-soft); max-width: var(--column-w); margin: 0 auto clamp(32px,5vw,56px); text-align: center; }
+.section-head { text-align: center; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head .eyebrow {
+  display: inline-block; font-family: var(--font-display); color: var(--c-gold);
+  letter-spacing: .12em; font-size: var(--fs-small); margin-bottom: 8px;
+}
+.section-alt { background: var(--c-parchment); }
+
+/* reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(16px); transition: var(--motion-fade); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* divider */
+.divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 auto; max-width: var(--container-w); padding: 0 24px; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--c-gold); opacity: .6; }
+.divider svg { flex-shrink: 0; color: var(--c-gold); }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 700; font-size: var(--fs-body);
+  padding: 14px 32px; border-radius: 999px; border: 2px solid transparent;
+  text-decoration: none; transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+  white-space: nowrap;
+}
+.btn:hover, .btn:focus-visible { transform: scale(1.02); }
+.btn-cta { background: var(--c-red); color: var(--c-white); }
+.btn-cta:hover, .btn-cta:focus-visible { background: var(--c-red-hover); }
+.btn-sm { padding: 8px 20px; font-size: var(--fs-small); }
+.btn-lg { padding: 16px 40px; font-size: 1.05rem; }
+.btn-outline { background: transparent; border-color: var(--c-gold); color: var(--c-navy); }
+[data-theme="dark"] .btn-outline, body.dark .btn-outline { color: var(--c-ink); }
+.btn-outline:hover, .btn-outline:focus-visible { background: var(--c-gold); color: var(--c-navy-deep); }
+.btn:focus-visible { outline: 3px solid var(--c-gold-bright); outline-offset: 2px; }
+
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 100; height: var(--header-h);
+  display: flex; align-items: center;
+  background: color-mix(in srgb, var(--c-navy-deep) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212,160,23,.35);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; }
+.brand {
+  font-family: var(--font-display); color: var(--c-gold-bright); font-size: 1.1rem;
+  text-decoration: none; letter-spacing: .04em; flex-shrink: 0;
+}
+.site-nav ul { display: flex; gap: 28px; }
+.site-nav a { color: var(--c-parchment); text-decoration: none; font-size: var(--fs-small); font-weight: 700; }
+.site-nav a:hover, .site-nav a:focus-visible { color: var(--c-gold-bright); }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.theme-toggle {
+  background: transparent; border: 1px solid var(--c-gold); color: var(--c-gold-bright);
+  width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  transition: background-color .2s ease;
+}
+.theme-toggle:hover, .theme-toggle:focus-visible { background: rgba(212,160,23,.2); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+.nav-toggle {
+  display: none; background: transparent; border: 1px solid var(--c-gold); border-radius: var(--radius-sm);
+  width: 40px; height: 40px; color: var(--c-gold-bright); align-items: center; justify-content: center;
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+
+@media (max-width: 860px) {
+  .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--c-navy-deep);
+    max-height: 0; overflow: hidden; transition: max-height .3s ease; border-bottom: 1px solid rgba(212,160,23,.35); }
+  .site-nav.is-open { max-height: 320px; }
+  .site-nav ul { flex-direction: column; padding: 16px 24px; gap: 18px; }
+  .header-actions .btn-sm { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative; min-height: calc(100vh - var(--header-h)); display: flex; align-items: center; justify-content: center;
+  overflow: hidden; text-align: center;
+  background: url('assets/hero-poster.jpg') center/cover no-repeat,
+    linear-gradient(160deg, var(--c-navy-deep) 0%, var(--c-navy) 55%, var(--c-parchment-deep) 130%);
+}
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(18,38,71,.55); }
+.hero-content { position: relative; z-index: 1; padding: 96px 24px 64px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.hero-logo { width: min(360px, 70vw); height: auto; border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.hero-title {
+  font-size: var(--fs-hero); color: var(--c-white); max-width: 16ch; text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.hero-sub { color: var(--c-parchment); font-size: 1.05rem; max-width: 34ch; text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+.scroll-cue {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 1;
+  color: var(--c-parchment); opacity: .85; animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,8px); } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
+
+/* ==========================================================================
+   About / name meaning
+   ========================================================================== */
+.name-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: clamp(32px,5vw,48px) 0; }
+.name-card {
+  background: var(--c-paper); border: 1px solid rgba(212,160,23,.4); border-radius: var(--radius);
+  padding: 24px 18px; text-align: center; box-shadow: var(--shadow-card);
+}
+.name-card .kanji { display: block; font-family: var(--font-display); color: var(--c-gold); font-size: 1.6rem; margin-bottom: 8px; }
+.name-card h3 { margin-bottom: 8px; }
+.name-card p { font-size: var(--fs-small); color: var(--c-ink-soft); margin: 0; }
+
+.concept-copy {
+  margin: clamp(40px,6vw,64px) auto 0; max-width: var(--column-w); text-align: center; padding: 32px 24px;
+  border-top: 1px solid var(--c-gold); border-bottom: 1px solid var(--c-gold);
+}
+.concept-copy p {
+  font-family: var(--font-display); font-size: clamp(1.2rem,2.6vw,1.6rem); color: var(--c-navy); margin: 0;
+}
+
+/* ==========================================================================
+   Why grid
+   ========================================================================== */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.why-item {
+  background: var(--c-paper); border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.why-item .icon { color: var(--c-gold); width: 32px; height: 32px; }
+.why-item p { color: var(--c-ink-soft); font-size: var(--fs-small); margin: 0; }
+.pull-quote {
+  margin: clamp(40px,6vw,64px) auto 0; max-width: var(--column-w); text-align: center;
+  font-family: var(--font-display); font-size: clamp(1.1rem,2.4vw,1.4rem); color: var(--c-navy);
+  position: relative; padding: 0 32px;
+}
+
+/* ==========================================================================
+   Timeline (time-axis, zigzag on desktop)
+   ========================================================================== */
+.timeline { position: relative; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+.timeline-step {
+  position: relative; display: flex; align-items: flex-start; gap: 16px;
+}
+
+/* rail: numbered stamp + 時期 badge, with a continuous vertical line behind them */
+.timeline-rail {
+  flex: 0 0 56px; width: 56px; align-self: stretch;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative; order: 1;
+}
+.timeline-rail::before {
+  /* -32px bottom bridges the flex gap so the axis reads as one continuous line */
+  content: ""; position: absolute; top: 0; bottom: -32px; left: 50%; width: 2px;
+  background: var(--c-gold); opacity: .5; transform: translateX(-50%); z-index: 0;
+}
+.timeline-step:first-child .timeline-rail::before { top: 22px; }
+.timeline-step:last-child .timeline-rail::before { bottom: calc(100% - 22px); }
+.timeline-badge {
+  display: inline-block; margin-bottom: 10px; white-space: nowrap;
+  background: var(--c-navy); color: var(--c-white); font-weight: 700;
+  font-size: .74rem; line-height: 1.3; letter-spacing: .02em;
+  padding: 4px 14px; border-radius: 999px;
+}
+.timeline-stamp {
+  position: relative; z-index: 1; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--c-navy); color: var(--c-gold-bright); display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 1.05rem; border: 2px solid var(--c-gold); box-shadow: var(--shadow-card);
+}
+
+/* pivot step (渡航) gets gold emphasis */
+.timeline-step.is-pivot .timeline-badge { background: var(--c-gold); color: var(--c-navy-deep); }
+.timeline-step.is-pivot .timeline-stamp {
+  background: var(--c-gold); color: var(--c-navy-deep); border-color: var(--c-gold-bright);
+  box-shadow: 0 0 0 6px rgba(212,160,23,.18), var(--shadow-card);
+}
+.timeline-step.is-pivot .timeline-card { border-color: var(--c-gold); }
+
+/* content card: illustration above text */
+.timeline-card, .timeline-spacer { flex: 1 1 auto; min-width: 0; order: 2; }
+.timeline-spacer { display: none; }
+.timeline-card {
+  background: var(--c-paper); border-radius: var(--radius); box-shadow: var(--shadow-card);
+  border: 2px solid transparent; overflow: hidden;
+}
+.timeline-img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.timeline-card-body { padding: 18px 20px; }
+.timeline-card-body h3 { color: var(--c-navy); margin-bottom: 6px; }
+.timeline-card-body > p { color: var(--c-ink-soft); margin: 0 0 14px; }
+.timeline-tasks-label {
+  font-size: .75rem; font-weight: 700; color: var(--c-gold); letter-spacing: .04em; margin: 0 0 6px;
+}
+.timeline-tasks { display: flex; flex-direction: column; gap: 4px; }
+.timeline-tasks li {
+  position: relative; padding-left: 16px; font-size: var(--fs-small); color: var(--c-ink-soft);
+}
+.timeline-tasks li::before { content: "・"; position: absolute; left: 0; color: var(--c-gold); }
+
+@media (min-width: 1024px) {
+  .timeline-step { gap: 32px; }
+  .timeline-rail { flex-basis: 72px; width: 72px; }
+  .timeline-stamp { width: 56px; height: 56px; font-size: 1.3rem; }
+  .timeline-step:first-child .timeline-rail::before { top: 28px; }
+  .timeline-step:last-child .timeline-rail::before { bottom: calc(100% - 28px); }
+  .timeline-card, .timeline-spacer { flex-basis: 0; max-width: 440px; }
+  .timeline-spacer { display: block; }
+  .timeline-step:nth-child(odd) .timeline-card { order: 1; }
+  .timeline-step:nth-child(odd) .timeline-rail { order: 2; }
+  .timeline-step:nth-child(odd) .timeline-spacer { order: 3; }
+  .timeline-step:nth-child(even) .timeline-spacer { order: 1; }
+  .timeline-step:nth-child(even) .timeline-rail { order: 2; }
+  .timeline-step:nth-child(even) .timeline-card { order: 3; }
+}
+
+/* ==========================================================================
+   Field map demo
+   ========================================================================== */
+.map-tabs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.map-tab {
+  background: var(--c-paper); border: 2px solid var(--c-gold); color: var(--c-ink); border-radius: 999px;
+  padding: 10px 22px; font-weight: 700; font-size: var(--fs-small); transition: background-color .2s ease, color .2s ease;
+}
+.map-tab[aria-selected="true"] { background: var(--c-navy); border-color: var(--c-navy); color: var(--c-white); }
+.map-tab:hover, .map-tab:focus-visible { background: var(--c-gold); color: var(--c-navy-deep); }
+
+.map-panel[hidden] { display: none; }
+.country-banner {
+  width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: var(--radius); box-shadow: var(--shadow-card); margin-bottom: 24px;
+}
+.map-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.map-block {
+  background: var(--c-paper); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card);
+}
+.map-block h3 { color: var(--c-navy); margin-bottom: 12px; }
+.question-list li {
+  position: relative; padding-left: 22px; margin-bottom: 10px; font-size: var(--fs-small); color: var(--c-ink-soft);
+}
+.question-list li::before { content: "Q."; position: absolute; left: 0; color: var(--c-gold); font-weight: 700; font-family: var(--font-display); }
+.route-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: var(--fs-small); color: var(--c-ink-soft); }
+.route-line .stop { background: var(--c-parchment); padding: 4px 12px; border-radius: 999px; font-weight: 700; color: var(--c-navy); }
+.route-line .arrow { color: var(--c-gold); }
+.route-note { margin-top: 12px; font-size: var(--fs-small); color: var(--c-ink-soft); }
+
+.theme-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.chip {
+  display: inline-block; border: 1px solid var(--c-gold); border-radius: 999px; padding: 6px 16px;
+  font-size: var(--fs-small); color: var(--c-ink-soft); background: transparent;
+}
+.chip.chip-static { cursor: default; }
+button.chip { transition: background-color .2s ease, color .2s ease, transform .2s ease; color: var(--c-ink); }
+button.chip:hover, button.chip:focus-visible { background: var(--c-gold); color: var(--c-navy-deep); }
+button.chip[aria-pressed="true"] { background: var(--c-navy); border-color: var(--c-navy); color: var(--c-white); }
+
+.future-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.future-card {
+  background: var(--c-paper); border-radius: var(--radius); box-shadow: var(--shadow-card); overflow: hidden;
+  border: 2px solid transparent; transition: border-color .25s ease, transform .25s ease, opacity .25s ease;
+}
+.future-card.is-dimmed { opacity: .35; }
+.future-card.is-match { border-color: var(--c-gold); }
+.future-card-img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.future-toggle {
+  width: 100%; background: var(--c-navy); color: var(--c-white); border: none; padding: 16px 18px; text-align: left;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700;
+}
+.future-toggle .plus { transition: transform .25s ease; flex-shrink: 0; }
+.future-toggle[aria-expanded="true"] .plus { transform: rotate(45deg); }
+.future-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.future-body-inner { padding: 16px 18px; font-size: var(--fs-small); color: var(--c-ink-soft); }
+.future-card .future-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 18px 0; }
+.future-card .future-tags span { font-size: .72rem; color: var(--c-navy); background: var(--c-parchment); border-radius: 999px; padding: 3px 10px; }
+
+/* ==========================================================================
+   Comparison
+   ========================================================================== */
+.compare { display: grid; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; }
+.compare-row + .compare-row { border-top: 1px solid rgba(212,160,23,.3); }
+.compare-row > div { padding: 18px 24px; font-size: var(--fs-small); }
+.compare-head { font-family: var(--font-display); font-size: 1.05rem; font-weight: 400; background: var(--c-navy); color: var(--c-white); text-align: center; padding: 20px; }
+.compare-row .general { background: var(--c-parchment); color: var(--c-ink-soft); }
+.compare-row .qclub { background: var(--c-paper); color: var(--c-ink); font-weight: 700; border-left: 3px solid var(--c-gold); }
+
+/* ==========================================================================
+   For-who checklist
+   ========================================================================== */
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; max-width: var(--column-w); margin: 0 auto; }
+.check-item { display: flex; gap: 12px; align-items: flex-start; }
+.check-item svg { flex-shrink: 0; width: 22px; height: 22px; color: var(--c-gold); margin-top: 2px; }
+.check-note {
+  max-width: var(--column-w); margin: clamp(32px,5vw,48px) auto 0; text-align: center; padding: 20px;
+  background: var(--c-parchment); border-radius: var(--radius); font-weight: 700; color: var(--c-navy);
+}
+
+/* ==========================================================================
+   Message
+   ========================================================================== */
+.message-box {
+  max-width: var(--column-w); margin: 0 auto; background: var(--c-paper); border-radius: var(--radius);
+  padding: clamp(28px,5vw,48px); box-shadow: var(--shadow-card); position: relative;
+}
+.message-box p { color: var(--c-ink-soft); }
+.message-sign { text-align: right; font-family: var(--font-display); color: var(--c-navy); margin-top: 24px; font-size: 1.1rem; }
+
+/* ==========================================================================
+   Register form
+   ========================================================================== */
+.register-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.involve-list { display: flex; flex-direction: column; gap: 12px; }
+.radio-card {
+  display: flex; gap: 12px; align-items: flex-start; background: var(--c-paper); border: 1px solid rgba(212,160,23,.4);
+  border-radius: var(--radius-sm); padding: 14px 16px; cursor: pointer; transition: border-color .2s ease, background-color .2s ease;
+}
+.radio-card:has(input:checked) { border-color: var(--c-gold); background: var(--c-parchment); }
+.radio-card input { margin-top: 4px; accent-color: var(--c-navy); flex-shrink: 0; }
+.radio-card span { font-size: var(--fs-small); }
+
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; font-size: var(--fs-small); font-weight: 700; margin-bottom: 6px; color: var(--c-navy); }
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; font-family: inherit; font-size: var(--fs-body); padding: 12px 14px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(92,74,51,.4); background: var(--c-paper); color: var(--c-ink);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  outline: 2px solid var(--c-gold); outline-offset: 1px; border-color: var(--c-gold);
+}
+.form-field .req { color: var(--c-red); margin-left: 4px; }
+.form-note { font-size: .75rem; color: var(--c-ink-soft); margin-top: 24px; }
+.form-success {
+  display: none; background: var(--c-parchment); border: 1px solid var(--c-gold); border-radius: var(--radius);
+  padding: 20px; margin-top: 20px; color: var(--c-navy); font-weight: 700;
+}
+.form-success.is-visible { display: block; }
+fieldset { border: none; padding: 0; margin: 0 0 24px; }
+legend { font-family: var(--font-display); color: var(--c-navy); font-size: 1.05rem; margin-bottom: 14px; padding: 0; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer { background: var(--c-navy-deep); color: var(--c-parchment); padding: 56px 0 32px; }
+.footer-nav ul { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-bottom: 28px; }
+.footer-nav a { text-decoration: none; color: var(--c-parchment); font-size: var(--fs-small); }
+.footer-nav a:hover, .footer-nav a:focus-visible { color: var(--c-gold-bright); }
+.site-footer .footer-bottom { text-align: center; font-size: .78rem; opacity: .8; }
+.site-footer .disclaimer { max-width: 560px; margin: 0 auto 12px; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .future-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 860px) {
+  .name-grid { grid-template-columns: repeat(2, 1fr); }
+  .map-panel-grid { grid-template-columns: 1fr; }
+  .register-grid { grid-template-columns: 1fr; }
+  .check-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .future-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-row .qclub { border-left: none; border-top: 3px solid var(--c-gold); }
+  .compare-head:nth-child(2) { display: none; }
+}
+@media (max-width: 480px) {
+  .future-grid { grid-template-columns: 1fr; }
+  .name-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Dark theme contrast
+   In dark mode --c-navy becomes a light blue, so white text on it drops to
+   2.6:1. Navy-filled surfaces flip to dark ink to stay above WCAG AA.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .timeline-badge,
+  :root:not([data-theme="light"]) .future-toggle,
+  :root:not([data-theme="light"]) .compare-head,
+  :root:not([data-theme="light"]) .map-tab[aria-selected="true"],
+  :root:not([data-theme="light"]) button.chip[aria-pressed="true"],
+  :root:not([data-theme="light"]) .timeline-stamp { color: var(--c-navy-deep); }
+}
+[data-theme="dark"] .timeline-badge,
+[data-theme="dark"] .future-toggle,
+[data-theme="dark"] .compare-head,
+[data-theme="dark"] .map-tab[aria-selected="true"],
+[data-theme="dark"] button.chip[aria-pressed="true"],
+[data-theme="dark"] .timeline-stamp { color: var(--c-navy-deep); }
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .btn:focus-visible { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand">フィールドワーQ部</a>
+    <nav class="site-nav" id="site-nav" aria-label="サイト内ナビゲーション">
+      <ul>
+        <li><a href="#about">この部について</a></li>
+        <li><a href="#flow">活動の流れ</a></li>
+        <li><a href="#map">フィールドマップ</a></li>
+        <li><a href="#register">関心登録</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="ダークモードに切り替え">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a href="#register" class="btn btn-cta btn-sm">関心登録する</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img class="hero-logo" src="assets/logo.jpg" alt="地球の課題までフィールドワーQ部 ― 地球の課題まで・社会課題の現場をめぐる" width="1200" height="900">
+      <h1 class="hero-title">世界は、検索しただけではわからない。</h1>
+      <p class="hero-sub">年に一度、世界の社会課題の現場へ。<br>見て、聞いて、問いを持ち帰る海外フィールドワーク・コミュニティ。</p>
+      <a href="#register" class="btn btn-cta btn-lg">第1回に関心登録する</a>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="スクロールして詳しく見る">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">ABOUT</span>
+        <h2>この部について</h2>
+      </div>
+      <div class="column reveal">
+        <p>「地球の課題までフィールドワーQ部」は、海外の社会課題を現地で見て、聞いて、考える、実践型フィールドワーク・コミュニティです。</p>
+        <p>単なる観光旅行でも、教室の中だけの社会課題研究でもありません。参加者自身が問いを立て、企業、行政、教育機関、NPO、住民などとの対話を通じて、その土地の課題と可能性を多角的に読み解きます。</p>
+        <p>社会課題を「遠い国の問題」として眺めるのではなく、自分の仕事、事業、研究、キャリアへつながる問いとして持ち帰ることを目指します。</p>
+      </div>
+
+      <div class="name-grid">
+        <div class="name-card reveal">
+          <span class="kanji">地球の課題まで</span>
+          <h3>冒険性</h3>
+          <p>観光では終わらない。地球規模の課題の現場まで踏み込む</p>
+        </div>
+        <div class="name-card reveal">
+          <span class="kanji">フィールドワーク</span>
+          <h3>実践性</h3>
+          <p>現地観察、対話、調査を重視する</p>
+        </div>
+        <div class="name-card reveal">
+          <span class="kanji">Q</span>
+          <h3>問い</h3>
+          <p>答えを受け取るのではなく、問いを発見する</p>
+        </div>
+        <div class="name-card reveal">
+          <span class="kanji">部</span>
+          <h3>親しみやすさ</h3>
+          <p>専門家だけでなく、仲間と参加できる</p>
+        </div>
+      </div>
+
+      <div class="concept-copy reveal">
+        <p>答えを教えてもらう旅ではなく、自分たちで問いを見つける旅。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/><path d="M12 8l2.5 3.5L12 16l-2.5-4.5L12 8Z"/></svg>
+  </div>
+
+  <!-- ============================= WHY ============================= -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">WHY FIELDWORK</span>
+        <h2>なぜフィールドワークなのか</h2>
+      </div>
+      <p class="section-lead reveal">ニュースやデータから社会課題を知ることはできます。しかし、現地の空気、人々の表情、産業の動き、暮らしの実感までは、画面越しにはわかりません。この部では、課題だけでなく、その土地の文化、人々の強さ、変化の兆し、未来の可能性まで見に行きます。</p>
+
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>一次情報に触れる</h3>
+          <p>現場でしか得られない一次情報に触れる</p>
+        </div>
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5A8.38 8.38 0 0 1 3 11.5 8.5 8.5 0 0 1 11.5 3 8.38 8.38 0 0 1 21 11.5Z"/></svg>
+          <h3>当事者と対話する</h3>
+          <p>当事者や現地組織から直接話を聞く</p>
+        </div>
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>仲間と議論する</h3>
+          <p>異なる専門性を持つ仲間と議論する</p>
+        </div>
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+          <h3>解像度を高める</h3>
+          <p>世界を見る解像度を高める</p>
+        </div>
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><path d="m5 5 14 14M19 5 5 19"/></svg>
+          <h3>仕事につなげる</h3>
+          <p>学びを仕事、研究、事業、キャリアにつなげる</p>
+        </div>
+        <div class="why-item reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/><path d="M17 3.5c1.5.7 2.5 2.2 2.5 4"/></svg>
+          <h3>知的な仲間と出会う</h3>
+          <p>帰国後も続く知的な仲間と出会う</p>
+        </div>
+      </div>
+
+      <p class="pull-quote reveal">帰国すると、ニュースの見え方が変わる。</p>
+    </div>
+  </section>
+
+  <!-- ============================= FLOW ============================= -->
+  <section class="section section-alt" id="flow">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>活動の流れ</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-step reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">1</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step1-plan.jpg" alt="地図を囲みながらテーマと渡航先を検討するメンバーのイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">渡航12〜10ヶ月前</span>
+              <h3>テーマと渡航先を決める</h3>
+              <p>参加者の関心と、その地域で起きている社会・経済の変化をもとに、渡航先と探究テーマの方向性を定めます。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>参加者の関心を集約</li>
+                <li>対象地域の変化を調査</li>
+                <li>探究テーマ仮決め</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+
+        <li class="timeline-step reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">2</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step2-arrange.jpg" alt="訪問先への打診と渡航の手配を進めるイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">渡航6ヶ月前</span>
+              <h3>訪問先を打診し、渡航を手配する</h3>
+              <p>企業・大学・行政・NPOなど訪問候補にアポイントを打診しながら、旅行会社や現地コーディネーターの選定、概算費用や定員といった渡航の骨組みを固めます。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>企業・大学・行政・NPOへアポイント依頼</li>
+                <li>旅行会社・現地コーディネーター選定</li>
+                <li>概算費用と定員の確定</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+
+        <li class="timeline-step reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">3</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step3-study.jpg" alt="事前学習会で現地の歴史や言語を学ぶ参加者のイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">渡航3ヶ月前</span>
+              <h3>事前学習と言語の基礎</h3>
+              <p>歴史・文化・産業・社会課題を学ぶ勉強会を重ね、現地語の挨拶や数字など基礎的なコミュニケーションを身につけます。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>歴史・文化・産業・社会課題の勉強会</li>
+                <li>現地語（ロシア語・ウズベク語）の挨拶と数字</li>
+                <li>関連文献の共有</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+
+        <li class="timeline-step reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">4</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step4-question.jpg" alt="各自の問いを整理し渡航準備の実務を進めるイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">渡航2〜1ヶ月前</span>
+              <h3>問いを固め、実務を整える</h3>
+              <p>事前学習をもとに各自が「現地で確かめたい問い」を確定し、航空券やビザ、海外保険の手配、訪問先としおりの最終確認など渡航前の実務を整えます。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>各自の「現地で確かめたい問い」を確定</li>
+                <li>航空券・ビザ・海外保険</li>
+                <li>訪問先の最終確定としおり作成</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+
+        <li class="timeline-step is-pivot reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">5</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step5-field.jpg" alt="現地で対話し観察するフィールドワークのイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">渡航（7〜10日間）</span>
+              <h3>現地で見る・聞く・対話する</h3>
+              <p>企業、大学、NPO、行政、住民などを訪ね、観察とインタビューを重ねます。毎晩の気づきを仲間と共有し、文化や自然を体験する時間もあわせて組み込みます。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>訪問とインタビュー</li>
+                <li>毎晩の気づき共有</li>
+                <li>文化・自然の体験</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+
+        <li class="timeline-step reveal">
+          <div class="timeline-rail">
+            <span class="timeline-stamp" aria-hidden="true">6</span>
+          </div>
+          <div class="timeline-card">
+            <img class="timeline-img" src="assets/flow/step6-share.jpg" alt="帰国後にレポートをまとめ発信する参加者のイラスト" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+            <div class="timeline-card-body">
+              <span class="timeline-badge">帰国後1〜2ヶ月</span>
+              <h3>持ち帰り、発信する</h3>
+              <p>レポート執筆や報告会、記事・SNSでの発信を通じて学びを仕事や新しい活動につなげ、次回フィールドワークのテーマの種もあわせて探ります。</p>
+              <p class="timeline-tasks-label">準備タスク</p>
+              <ul class="timeline-tasks">
+                <li>レポート執筆</li>
+                <li>報告会</li>
+                <li>記事・SNS発信</li>
+                <li>次回テーマの種を出す</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-spacer" aria-hidden="true"></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================= FIELD MAP DEMO ============================= -->
+  <section class="section" id="map">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">FIELD MAP</span>
+        <h2>探究フィールドマップ</h2>
+      </div>
+      <p class="section-lead reveal">タブを切り替えて第1回候補の問いとルートを見る、テーマチップで将来のフィールドを絞り込む ― 実際に操作してみてください。</p>
+
+      <div class="map-tabs reveal" role="tablist" aria-label="フィールド選択タブ">
+        <button class="map-tab" id="tab-uz" role="tab" aria-selected="true" aria-controls="panel-uz" type="button">第1回候補：ウズベキスタン</button>
+        <button class="map-tab" id="tab-kz" role="tab" aria-selected="false" aria-controls="panel-kz" tabindex="-1" type="button">カザフスタン</button>
+        <button class="map-tab" id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" tabindex="-1" type="button">将来のフィールド</button>
+      </div>
+
+      <!-- Uzbekistan -->
+      <div class="map-panel reveal" id="panel-uz" role="tabpanel" aria-labelledby="tab-uz">
+        <img class="country-banner" src="assets/countries/uzbekistan.jpg" alt="ウズベキスタン・サマルカンドの歴史建築" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+        <div class="map-panel-grid">
+          <div class="map-block">
+            <h3>現地で考える問い</h3>
+            <ul class="question-list">
+              <li>アラル海の縮小は、人々の暮らしと産業をどう変えたのか</li>
+              <li>綿花産業と水資源の問題は、現在どう変化しているのか</li>
+              <li>若い人口とIT人材は、新しい成長の力になるのか</li>
+              <li>歴史都市の観光開発は、文化保存と両立できるのか</li>
+            </ul>
+          </div>
+          <div class="map-block">
+            <h3>訪問ルート候補</h3>
+            <div class="route-line">
+              <span class="stop">タシケント</span><span class="arrow">→</span>
+              <span class="stop">サマルカンド／ブハラ</span><span class="arrow">→</span>
+              <span class="stop">ヌクス</span><span class="arrow">→</span>
+              <span class="stop">ムイナク</span>
+            </div>
+            <p class="route-note">綿花産業と旧ソ連圏の面影が残る古都から、アラル海の縮小が最も色濃く現れるムイナクまでを巡ります。</p>
+          </div>
+        </div>
+        <div class="map-block">
+          <h3>ウズベキスタン・カザフスタン共通の探究テーマ</h3>
+          <div class="theme-chips" id="chips-uz"></div>
+        </div>
+      </div>
+
+      <!-- Kazakhstan -->
+      <div class="map-panel reveal" id="panel-kz" role="tabpanel" aria-labelledby="tab-kz" hidden>
+        <img class="country-banner" src="assets/countries/kazakhstan.jpg" alt="カザフスタンの草原と山並み" width="960" height="540" loading="lazy" onerror="this.style.display='none'">
+        <div class="map-panel-grid">
+          <div class="map-block">
+            <h3>現地で考える問い</h3>
+            <ul class="question-list">
+              <li>石油・ガス・鉱物資源への依存から転換できるのか</li>
+              <li>脱炭素と経済成長をどう両立するのか</li>
+              <li>資源による豊かさは、国内にどのように分配されているのか</li>
+              <li>中央アジアの物流と地政学で、どのような役割を担うのか</li>
+            </ul>
+          </div>
+          <div class="map-block">
+            <h3>自然・文化の訪問候補</h3>
+            <div class="route-line">
+              <span class="stop">アヤズカラ</span>
+              <span class="stop">アルティンエメル</span>
+            </div>
+            <p class="route-note">資源国の産業を見るだけでなく、雄大な自然を体感する時間もルートに組み込みます。<br>※キルギスは初回には含めず、将来の拡張候補とします。</p>
+          </div>
+        </div>
+        <div class="map-block">
+          <h3>ウズベキスタン・カザフスタン共通の探究テーマ</h3>
+          <div class="theme-chips" id="chips-kz"></div>
+        </div>
+      </div>
+
+      <!-- Future fields -->
+      <div class="map-panel reveal" id="panel-future" role="tabpanel" aria-labelledby="tab-future" hidden>
+        <div class="map-block" style="margin-bottom: 28px;">
+          <h3>テーマで絞り込む</h3>
+          <p style="font-size: var(--fs-small); color: var(--c-ink-soft); margin: 0 0 4px;">チップをクリックすると、該当する地域カードがハイライトされます（複数選択可）。</p>
+          <div class="theme-chips" id="future-filters" role="group" aria-label="テーマで絞り込む"></div>
+        </div>
+        <div class="future-grid" id="future-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/><path d="M12 8l2.5 3.5L12 16l-2.5-4.5L12 8Z"/></svg>
+  </div>
+
+  <!-- ============================= DIFF ============================= -->
+  <section class="section" id="diff">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">WHAT MAKES IT DIFFERENT</span>
+        <h2>この部ならではの違い</h2>
+      </div>
+
+      <div class="compare column reveal">
+        <div class="compare-row">
+          <div class="compare-head">一般的な海外旅行</div>
+          <div class="compare-head">地球の課題までフィールドワーQ部</div>
+        </div>
+        <div class="compare-row">
+          <div class="general">有名な場所を巡る</div>
+          <div class="qclub">社会と産業の変化が起きている場所を訪ねる</div>
+        </div>
+        <div class="compare-row">
+          <div class="general">見ることが中心</div>
+          <div class="qclub">見る・聞く・問いを立てる</div>
+        </div>
+        <div class="compare-row">
+          <div class="general">旅行中に完結する</div>
+          <div class="qclub">事前学習から帰国後の発信まで続く</div>
+        </div>
+        <div class="compare-row">
+          <div class="general">個人の体験</div>
+          <div class="qclub">多様な仲間との共同探究</div>
+        </div>
+        <div class="compare-row">
+          <div class="general">思い出を持ち帰る</div>
+          <div class="qclub">問いと次の行動を持ち帰る</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FOR WHO ============================= -->
+  <section class="section section-alt" id="for-who">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">WHO WE'RE LOOKING FOR</span>
+        <h2>参加してほしい人</h2>
+      </div>
+
+      <ul class="check-grid reveal">
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>世界の社会課題に関心がある</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>普通の海外旅行より一歩踏み込んだ体験をしたい</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>新興国の産業やビジネスに興味がある</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>社会課題を仕事や事業につなげたい</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>現地の人や組織と直接対話してみたい</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>普段の仕事から離れ、視野を広げたい</span>
+        </li>
+        <li class="check-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>卒業後も学び続けられる仲間がほしい</span>
+        </li>
+      </ul>
+
+      <p class="check-note reveal">専門知識・経験不問。必要なのは好奇心と現地を尊重する姿勢です。</p>
+    </div>
+  </section>
+
+  <!-- ============================= MESSAGE ============================= -->
+  <section class="section" id="message">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">MESSAGE</span>
+        <h2>発起人メッセージ</h2>
+      </div>
+
+      <div class="message-box reveal">
+        <p>世界の社会課題について、記事やニュースを読む機会は増えました。けれども、知識として理解することと、実際にその場所に立つことの間には、大きな隔たりがあります。</p>
+        <p>現地の人に会い、街を歩き、産業や暮らしを見る。そこで初めて、それまで自分が抱いていた前提が崩れ、新しい問いが生まれることがあります。</p>
+        <p>この部を、誰かが用意した答えを学ぶ場所ではなく、異なる仕事や経験を持つ仲間と一緒に、世界の現場から問いを見つける場所にしたいと思っています。</p>
+        <p>年に一度、いつもの場所から遠く離れて、これからの世界と自分自身について考えてみませんか。</p>
+        <p class="message-sign">― 発起人</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= REGISTER ============================= -->
+  <section class="section section-alt" id="register">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">JOIN US</span>
+        <h2>第1回に関心登録する</h2>
+      </div>
+      <p class="section-lead reveal">渡航先や実施時期などの詳細は今後の説明会でご案内します。まずは関心登録だけでも大歓迎です。</p>
+
+      <div class="register-grid reveal">
+        <div>
+          <h3 style="color:var(--c-navy); margin-bottom:16px;">関わり方について</h3>
+          <p style="font-size:var(--fs-small); color:var(--c-ink-soft);">現時点での関わりたい形を教えてください。迷う場合は「まずは説明会に参加したい」で構いません。</p>
+        </div>
+        <div>
+          <form id="register-form" novalidate>
+            <fieldset>
+              <legend>希望する関わり方 <span class="req">必須</span></legend>
+              <div class="involve-list">
+                <label class="radio-card">
+                  <input type="radio" name="involvement" value="第1回の渡航に参加したい" required>
+                  <span>第1回の渡航に参加したい</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="involvement" value="企画・運営から関わりたい">
+                  <span>企画・運営から関わりたい</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="involvement" value="訪問先や現地ネットワークを紹介できる">
+                  <span>訪問先や現地ネットワークを紹介できる</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="involvement" value="まずは説明会に参加したい">
+                  <span>まずは説明会に参加したい</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="involvement" value="最新情報だけ受け取りたい">
+                  <span>最新情報だけ受け取りたい</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-field">
+              <label for="f-name">氏名 <span class="req">必須</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="f-affiliation">所属／卒業年度</label>
+              <input type="text" id="f-affiliation" name="affiliation" placeholder="例：GLOBIS経営大学院 2023年卒">
+            </div>
+            <div class="form-field">
+              <label for="f-email">メールアドレス <span class="req">必須</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="f-region">関心のある国・地域</label>
+              <input type="text" id="f-region" name="region" placeholder="例：ウズベキスタン、カザフスタン">
+            </div>
+            <div class="form-field">
+              <label for="f-comment">コメント／現地とのつながり</label>
+              <textarea id="f-comment" name="comment" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-cta btn-lg" style="width:100%;">この内容で関心登録する</button>
+
+            <p class="form-note">※現在準備中のため、送信内容はまだ保存されません。</p>
+
+            <div class="form-success" id="form-success" role="status" aria-live="polite">
+              関心登録ありがとうございます。第1回フィールドワークの詳細が決まり次第、ご登録の連絡先へご案内します。
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="#about">この部について</a></li>
+        <li><a href="#why">なぜフィールドワークか</a></li>
+        <li><a href="#flow">活動の流れ</a></li>
+        <li><a href="#map">フィールドマップ</a></li>
+        <li><a href="#diff">違い</a></li>
+        <li><a href="#for-who">参加してほしい人</a></li>
+        <li><a href="#message">発起人メッセージ</a></li>
+        <li><a href="#register">関心登録</a></li>
+      </ul>
+    </nav>
+    <p class="disclaimer footer-bottom">※「地球の課題までフィールドワーQ部」はGLOBIS公認クラブではありません（準備中コミュニティ）。</p>
+    <p class="footer-bottom">&copy; 2026 地球の課題までフィールドワーQ部</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ----------------------------------------------------------------
+     Theme toggle
+     ---------------------------------------------------------------- */
+  var root = document.documentElement;
+  var themeToggle = document.getElementById("theme-toggle");
+  var savedTheme = localStorage.getItem("fwq-theme");
+  if (savedTheme === "dark" || savedTheme === "light") {
+    root.setAttribute("data-theme", savedTheme);
+    themeToggle.setAttribute("aria-pressed", savedTheme === "dark" ? "true" : "false");
+  }
+  themeToggle.addEventListener("click", function () {
+    var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var current = root.getAttribute("data-theme") || (systemDark ? "dark" : "light");
+    var next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("fwq-theme", next);
+    themeToggle.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
+  });
+
+  /* ----------------------------------------------------------------
+     Mobile nav toggle
+     ---------------------------------------------------------------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var siteNav = document.getElementById("site-nav");
+  navToggle.addEventListener("click", function () {
+    var isOpen = siteNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+  siteNav.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      siteNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ----------------------------------------------------------------
+     Hero video: reduced motion / load failure fallback
+     ---------------------------------------------------------------- */
+  var heroVideo = document.getElementById("hero-video");
+  function disableHeroVideo() {
+    heroVideo.pause();
+    heroVideo.style.display = "none";
+  }
+  if (reduceMotion) {
+    disableHeroVideo();
+  } else {
+    heroVideo.addEventListener("error", disableHeroVideo, true);
+    heroVideo.play().catch(function () { /* autoplay blocked or file missing: poster/gradient remains visible */ });
+  }
+
+  /* ----------------------------------------------------------------
+     Scroll reveal (IntersectionObserver, once)
+     ---------------------------------------------------------------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ----------------------------------------------------------------
+     Field map data
+     ---------------------------------------------------------------- */
+  var COMMON_THEMES = [
+    "旧ソ連圏からの社会・経済転換",
+    "中国・ロシア・欧州の間にある地政学",
+    "資源国の成長と産業多角化",
+    "IT・スタートアップ・人材育成",
+    "都市と地方の格差",
+    "水資源と気候変動",
+    "日本企業との協力可能性"
+  ];
+
+  var FILTER_TAGS = [
+    { id: "water", label: "水資源" },
+    { id: "it", label: "IT・産業" },
+    { id: "energy", label: "脱炭素・エネルギー" },
+    { id: "tourism", label: "観光" },
+    { id: "geo", label: "地政学" },
+    { id: "edu", label: "教育・貧困" },
+    { id: "urban", label: "都市化" }
+  ];
+
+  var FUTURE_REGIONS = [
+    {
+      name: "ルワンダ",
+      theme: "ジェノサイド後の国家再建、和解、教育、女性活躍、ICT、貧困削減",
+      tags: ["it", "edu"],
+      img: "rwanda.jpg",
+      alt: "ルワンダの丘陵地帯と首都キガリの風景"
+    },
+    {
+      name: "ヨルダン",
+      theme: "難民、水不足、中東情勢、観光、エネルギー、地域共存",
+      tags: ["water", "geo", "tourism"],
+      img: "jordan.jpg",
+      alt: "ヨルダン・ワディラムの砂漠と岩山"
+    },
+    {
+      name: "スリランカ",
+      theme: "経済危機、国家債務、観光、紅茶産業、民族・宗教、復興",
+      tags: ["tourism", "geo"],
+      img: "srilanka.jpg",
+      alt: "スリランカの紅茶畑と丘陵地帯"
+    },
+    {
+      name: "コスタリカ",
+      theme: "環境政策、再生可能エネルギー、生物多様性、観光開発の光と影",
+      tags: ["energy", "tourism"],
+      img: "costarica.jpg",
+      alt: "コスタリカの熱帯雨林と自然保護区"
+    },
+    {
+      name: "サウジアラビア",
+      theme: "脱石油、巨大都市開発、社会変革、観光産業",
+      tags: ["energy", "urban", "tourism"],
+      img: "saudiarabia.jpg",
+      alt: "サウジアラビアの砂漠と近未来都市開発"
+    },
+    {
+      name: "ケニア",
+      theme: "スタートアップ、金融包摂、都市化、自然保護",
+      tags: ["it", "urban"],
+      img: "kenya.jpg",
+      alt: "ケニア・ナイロビの都市とサバンナ"
+    },
+    {
+      name: "グリーンランド",
+      theme: "気候変動、資源、先住民社会、北極圏の地政学",
+      tags: ["energy", "geo"],
+      img: "greenland.jpg",
+      alt: "グリーンランドの氷河と北極圏の風景"
+    },
+    {
+      name: "イラン",
+      theme: "歴史文化、制裁下の経済、エネルギー、国際関係",
+      tags: ["energy", "geo"],
+      img: "iran.jpg",
+      alt: "イランの歴史的建築とモスク"
+    }
+  ];
+
+  function tagLabel(id) {
+    var f = FILTER_TAGS.filter(function (t) { return t.id === id; })[0];
+    return f ? f.label : id;
+  }
+
+  /* Render common theme chips (static, informational) into both tab panels */
+  ["chips-uz", "chips-kz"].forEach(function (containerId) {
+    var container = document.getElementById(containerId);
+    COMMON_THEMES.forEach(function (theme) {
+      var span = document.createElement("span");
+      span.className = "chip chip-static";
+      span.textContent = theme;
+      container.appendChild(span);
+    });
+  });
+
+  /* ----------------------------------------------------------------
+     Tabs
+     ---------------------------------------------------------------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".map-tab"));
+  var panels = {
+    "tab-uz": document.getElementById("panel-uz"),
+    "tab-kz": document.getElementById("panel-kz"),
+    "tab-future": document.getElementById("panel-future")
+  };
+
+  function selectTab(tab) {
+    tabs.forEach(function (t) {
+      var selected = t === tab;
+      t.setAttribute("aria-selected", selected ? "true" : "false");
+      t.tabIndex = selected ? 0 : -1;
+      panels[t.id].hidden = !selected;
+    });
+    tab.focus();
+  }
+
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) {
+        var selected = t === tab;
+        t.setAttribute("aria-selected", selected ? "true" : "false");
+        t.tabIndex = selected ? 0 : -1;
+        panels[t.id].hidden = !selected;
+      });
+    });
+    tab.addEventListener("keydown", function (e) {
+      var newIndex = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") newIndex = (index + 1) % tabs.length;
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") newIndex = (index - 1 + tabs.length) % tabs.length;
+      if (e.key === "Home") newIndex = 0;
+      if (e.key === "End") newIndex = tabs.length - 1;
+      if (newIndex !== null) {
+        e.preventDefault();
+        selectTab(tabs[newIndex]);
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------------
+     Future field cards + filter chips
+     ---------------------------------------------------------------- */
+  var futureGrid = document.getElementById("future-grid");
+  var activeFilters = [];
+
+  FUTURE_REGIONS.forEach(function (region, i) {
+    var card = document.createElement("div");
+    card.className = "future-card";
+    card.dataset.tags = region.tags.join(",");
+
+    var bodyId = "future-body-" + i;
+    card.innerHTML =
+      '<img class="future-card-img" src="assets/countries/' + region.img + '" alt="' + region.alt + '" width="640" height="360" loading="lazy" onerror="this.style.display=\'none\'">' +
+      '<button class="future-toggle" type="button" aria-expanded="false" aria-controls="' + bodyId + '">' +
+        "<span>" + region.name + "</span>" +
+        '<svg class="plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>' +
+      "</button>" +
+      '<div class="future-body" id="' + bodyId + '">' +
+        '<div class="future-body-inner">' + region.theme + "</div>" +
+      "</div>" +
+      '<div class="future-tags">' +
+        region.tags.map(function (t) { return "<span>" + tagLabel(t) + "</span>"; }).join("") +
+      "</div>";
+
+    var toggleBtn = card.querySelector(".future-toggle");
+    var body = card.querySelector(".future-body");
+    toggleBtn.addEventListener("click", function () {
+      var expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      toggleBtn.setAttribute("aria-expanded", expanded ? "false" : "true");
+      body.style.maxHeight = expanded ? "0" : body.scrollHeight + "px";
+    });
+
+    futureGrid.appendChild(card);
+  });
+
+  var futureFiltersEl = document.getElementById("future-filters");
+  FILTER_TAGS.forEach(function (tag) {
+    var chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "chip";
+    chip.textContent = tag.label;
+    chip.setAttribute("aria-pressed", "false");
+    chip.dataset.tag = tag.id;
+    chip.addEventListener("click", function () {
+      var idx = activeFilters.indexOf(tag.id);
+      if (idx === -1) {
+        activeFilters.push(tag.id);
+        chip.setAttribute("aria-pressed", "true");
+      } else {
+        activeFilters.splice(idx, 1);
+        chip.setAttribute("aria-pressed", "false");
+      }
+      applyFilters();
+    });
+    futureFiltersEl.appendChild(chip);
+  });
+
+  function applyFilters() {
+    var cards = futureGrid.querySelectorAll(".future-card");
+    cards.forEach(function (card) {
+      var tags = card.dataset.tags.split(",");
+      if (activeFilters.length === 0) {
+        card.classList.remove("is-dimmed", "is-match");
+        return;
+      }
+      var matches = activeFilters.some(function (f) { return tags.indexOf(f) !== -1; });
+      card.classList.toggle("is-match", matches);
+      card.classList.toggle("is-dimmed", !matches);
+    });
+  }
+
+  /* ----------------------------------------------------------------
+     Register form (dummy submit)
+     ---------------------------------------------------------------- */
+  var form = document.getElementById("register-form");
+  var successMsg = document.getElementById("form-success");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    successMsg.classList.add("is-visible");
+    successMsg.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    form.reset();
+  });
+
+})();
+</script>
+
+</body>
+</html>
